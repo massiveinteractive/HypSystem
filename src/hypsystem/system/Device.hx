@@ -8,24 +8,46 @@ class Device
 	@IOS("hyp-system","hypsystem_device_getUuid")
 	public static function getUuid():String
 	{
-		return null;
+		return "FLASH-UUID";
 	}
 
 	@JNI
 	@IOS("hyp-system","hypsystem_device_getLangCode")
 	public static function getLanguageCode():String
 	{
-		return null;
+		#if flash
+		return flash.system.Capabilities.language;
+		#else
+		return "unknow";
+		#end
 	}
-
-	#if android
 
 	@JNI
-	public static function getScreenBucket():String
+	@IOS("hyp-system","hypsystem_device_isTablet")
+	public static function isTablet():Bool
 	{
-
+		return false;
 	}
 
-	#end
+	@JNI
+	@IOS("hyp-system","hypsystem_device_getScreenHeight")
+	public static function getScreenHeight():Int
+	{
+		return flash.Lib.current.stage.stageHeight;
+	}
+
+	@JNI
+	@IOS("hyp-system","hypsystem_device_getScreenWidth")
+	public static function getScreenWidth():Int
+	{
+		return flash.Lib.current.stage.stageWidth;
+	}
+
+	@JNI
+	@IOS("hyp-system","hypsystem_device_getScaleFactor")
+	public static function getScaleFactor():Float
+	{
+		return 1.0;
+	}
 
 }
