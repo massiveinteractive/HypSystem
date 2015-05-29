@@ -29,42 +29,50 @@ class NetworkInfos
 
 	public static function getConnectionType():ConnectionType
 	{
-
 		var type = 0;
-
-		#if(android || ios)
-			type = getActiveConnectionType();
-		#end
-
-		var res:ConnectionType = switch(type)
+		var result:ConnectionType = ConnectionType.NONE;
+		try
 		{
-			case 0:
-				ConnectionType.NONE;
+			#if(android || ios)
+			type = getActiveConnectionType();	
+			#end
 
-			case 1:
-				ConnectionType.WIFI;
+			switch (type)
+			{
+				case 1:
+					result = ConnectionType.WIFI;
 
-			case 2:
-				ConnectionType.MOBILE;
+				case 2:
+					result = ConnectionType.MOBILE;
 
-			case _:
+				case _:
+			}
+
+			trace("result = " + result);
 		}
-
-		return res;
+		catch (error:Dynamic)
+		{
+			trace(error);
+		}
+		return result;
 	}
 
 	static function onStatusChanged():Void
 	{
-		trace("onStatusChanged");
+		trace("nStatus changed");
 		#if msignal
-		onConnectivityChanged.dispatch();
+		if (onConnectivityChanged != null)
+		{
+			onConnectivityChanged.dispatch();
+		}
 		#else
-		if(onConnectivityChanged!=null)
+		if (onConnectivityChanged != null)
+		{
 			onConnectivityChanged();
+		}
 		#end
 	}
 
-	
 	@JNI 
 	@IOS("hyp-system","hypsystem_networkinterface_isWifi")
 	public static function isWifi():Bool
@@ -86,7 +94,6 @@ class NetworkInfos
 
 	@CPP("hypsystem","hypsystem_setEventListener")
 	static function setListener(f:Void->Void):Void{}
-
 }
 
 enum ConnectionType

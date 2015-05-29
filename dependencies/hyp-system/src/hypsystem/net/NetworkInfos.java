@@ -98,20 +98,20 @@ public class NetworkInfos
 	static public int getActiveConnectionType()
 	{
 		int result = 0;
-		FutureTask<Integer> task = new FutureTask<Integer>(getTypeCallable);
-		Activity activity = HypSystem.mainActivity;
-		if (activity != null)
+		try
 		{
-			activity.runOnUiThread(task);		
-			try
-			{
-				result = task.get(1, TimeUnit.SECONDS);
-			}
-			catch (InterruptedException | ExecutionException | TimeoutException exception)
-    		{	
-    			exception.printStackTrace();
-    		}
+			GetNetworkTypeCallback callable = new GetNetworkTypeCallback();
+			FutureTask<Integer> task = new FutureTask<Integer>(callable);
+			HypSystem.mainActivity.runOnUiThread(task);
+
+			Integer value = task.get(1, TimeUnit.SECONDS);
+			result = value.intValue();
+		} 
+		catch(Exception exception)
+		{
+			exception.printStackTrace();
 		}
+
 		return result;
 	}
 
