@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/johann.martinache/Desktop/massive/massive-hypsystem/dependencies/hypsystem/build/intermediates/exploded-aar/dependencies/jodatime/unspecified/res/values-th-rTH/values-th-rTH.xml -->
+    <eat-comment/>
+    <string name="date_time">%2$s, %1$s</string>
+</resources>

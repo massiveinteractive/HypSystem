@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.danlew.android.joda"
+    android:versionCode="5"
+    android:versionName="2.3.4" >
+
+    <uses-sdk
+        android:minSdkVersion="::ANDROID_MINIMUM_SDK_VERSION::"
+        android:targetSdkVersion="::ANDROID_TARGET_SDK_VERSION::" />
+
+    <application />
+
+</manifest>

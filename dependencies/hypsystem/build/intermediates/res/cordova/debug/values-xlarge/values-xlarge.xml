@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/johann.martinache/Desktop/massive/massive-hypsystem/dependencies/hypsystem/src/main/res/values-xlarge/isTablet.xml -->
+    <eat-comment/>
+    <bool name="isTablet">true</bool>
+</resources>

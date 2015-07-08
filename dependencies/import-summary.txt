@@ -1,0 +1,68 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From hyp-system:
+* build.xml
+From joda-time:
+* build.xml
+* tests/
+* tests/java/
+* tests/java/net/
+* tests/java/net/danlew/
+* tests/java/net/danlew/android/
+* tests/java/net/danlew/android/joda/
+* tests/java/net/danlew/android/joda/test/
+* tests/java/net/danlew/android/joda/test/TestDateTimeZone.java
+* tests/java/net/danlew/android/joda/test/TestDateUtils.java
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In joda-time:
+* AndroidManifest.xml => jodatime/src/main/AndroidManifest.xml
+* res/ => jodatime/src/main/res/
+* src/ => jodatime/src/main/java/
+* src/org/joda/time/base/package.html => jodatime/src/main/resources/org/joda/time/base/package.html
+* src/org/joda/time/chrono/package.html => jodatime/src/main/resources/org/joda/time/chrono/package.html
+* src/org/joda/time/convert/package.html => jodatime/src/main/resources/org/joda/time/convert/package.html
+* src/org/joda/time/field/package.html => jodatime/src/main/resources/org/joda/time/field/package.html
+* src/org/joda/time/format/messages.properties => jodatime/src/main/resources/org/joda/time/format/messages.properties
+* src/org/joda/time/format/messages_da.properties => jodatime/src/main/resources/org/joda/time/format/messages_da.properties
+* src/org/joda/time/format/messages_de.properties => jodatime/src/main/resources/org/joda/time/format/messages_de.properties
+* src/org/joda/time/format/messages_en.properties => jodatime/src/main/resources/org/joda/time/format/messages_en.properties
+* src/org/joda/time/format/messages_es.properties => jodatime/src/main/resources/org/joda/time/format/messages_es.properties
+* src/org/joda/time/format/messages_fr.properties => jodatime/src/main/resources/org/joda/time/format/messages_fr.properties
+* src/org/joda/time/format/messages_ja.properties => jodatime/src/main/resources/org/joda/time/format/messages_ja.properties
+* src/org/joda/time/format/messages_nl.properties => jodatime/src/main/resources/org/joda/time/format/messages_nl.properties
+* src/org/joda/time/format/messages_pt.properties => jodatime/src/main/resources/org/joda/time/format/messages_pt.properties
+* src/org/joda/time/format/package.html => jodatime/src/main/resources/org/joda/time/format/package.html
+* src/org/joda/time/overview.html => jodatime/src/main/resources/org/joda/time/overview.html
+* src/org/joda/time/package.html => jodatime/src/main/resources/org/joda/time/package.html
+* src/org/joda/time/tz/package.html => jodatime/src/main/resources/org/joda/time/tz/package.html
+In hyp-system:
+* AndroidManifest.xml => hypsystem/src/main/AndroidManifest.xml
+* res/ => hypsystem/src/main/res/
+* src/ => hypsystem/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

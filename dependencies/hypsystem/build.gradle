@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+    defaultConfig {
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+        lime {
+        }
+        cordova {
+            minSdkVersion 16
+        }
+    }
+}
+
+dependencies {
+    compile 'net.danlew:android.joda:2.8.1'
+}
