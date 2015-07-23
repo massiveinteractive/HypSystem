@@ -3,8 +3,8 @@
     package="fr.hypsystem.HypSystemExtension.test" >
 
     <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="16" />
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
